@@ -32,6 +32,11 @@
             this.txtServerAddress = new System.Windows.Forms.TextBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.lblTopic = new System.Windows.Forms.Label();
+            this.txtTopic = new System.Windows.Forms.TextBox();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.txtPublishMessage = new System.Windows.Forms.TextBox();
+            this.btnPublish = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblServerAddress
@@ -62,19 +67,66 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(717, 9);
+            this.lblStatus.Location = new System.Drawing.Point(628, 9);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(71, 13);
+            this.lblStatus.Size = new System.Drawing.Size(160, 13);
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "disconnected";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblTopic
+            // 
+            this.lblTopic.AutoSize = true;
+            this.lblTopic.Location = new System.Drawing.Point(48, 78);
+            this.lblTopic.Name = "lblTopic";
+            this.lblTopic.Size = new System.Drawing.Size(34, 13);
+            this.lblTopic.TabIndex = 4;
+            this.lblTopic.Text = "Topic";
+            // 
+            // txtTopic
+            // 
+            this.txtTopic.Location = new System.Drawing.Point(89, 78);
+            this.txtTopic.Name = "txtTopic";
+            this.txtTopic.Size = new System.Drawing.Size(160, 20);
+            this.txtTopic.TabIndex = 5;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(32, 107);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(50, 13);
+            this.lblMessage.TabIndex = 6;
+            this.lblMessage.Text = "Message";
+            // 
+            // txtPublishMessage
+            // 
+            this.txtPublishMessage.Location = new System.Drawing.Point(90, 104);
+            this.txtPublishMessage.Multiline = true;
+            this.txtPublishMessage.Name = "txtPublishMessage";
+            this.txtPublishMessage.Size = new System.Drawing.Size(160, 60);
+            this.txtPublishMessage.TabIndex = 7;
+            // 
+            // btnPublish
+            // 
+            this.btnPublish.Location = new System.Drawing.Point(256, 141);
+            this.btnPublish.Name = "btnPublish";
+            this.btnPublish.Size = new System.Drawing.Size(75, 23);
+            this.btnPublish.TabIndex = 8;
+            this.btnPublish.Text = "Publish";
+            this.btnPublish.UseVisualStyleBackColor = true;
+            this.btnPublish.Click += new System.EventHandler(this.btnPublish_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPublish);
+            this.Controls.Add(this.txtPublishMessage);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.txtTopic);
+            this.Controls.Add(this.lblTopic);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txtServerAddress);
@@ -92,6 +144,11 @@
         private System.Windows.Forms.TextBox txtServerAddress;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblTopic;
+        private System.Windows.Forms.TextBox txtTopic;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.TextBox txtPublishMessage;
+        private System.Windows.Forms.Button btnPublish;
     }
 }
 

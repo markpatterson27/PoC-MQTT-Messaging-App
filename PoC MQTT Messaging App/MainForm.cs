@@ -58,5 +58,24 @@ namespace PoC_MQTT_Messaging_App
 
             await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
         }
+
+        private async void btnPublish_Click(object sender, EventArgs e)
+        {
+            // build message
+            var message = new MqttApplicationMessageBuilder()
+                .WithTopic(txtTopic.Text)
+                .WithPayload(txtPublishMessage.Text)
+                .Build();
+
+            await mqttClient.PublishAsync(message, CancellationToken.None);
+
+            // update status
+            lblStatus.Text = "message published";
+            lblStatus.ForeColor = Color.Green;
+
+            // clear message box
+            txtPublishMessage.Text = "";
+
+        }
     }
 }
