@@ -47,6 +47,21 @@ namespace PoC_MQTT_Messaging_App
                 }));
                 return Task.CompletedTask;
             };
+            mqttClient.ApplicationMessageReceivedAsync += e =>
+            {
+                Invoke(new Action(() =>
+                {
+                    // Add message to the subscribe listbox messages
+                    lstSubscribeMessages.Items.Add(Encoding.UTF8.GetString(e.ApplicationMessage.Payload));
+
+                    // update status
+                    lblStatus.Text = "Message received";
+                    lblStatus.ForeColor = Color.Blue;
+
+                }));
+
+                return Task.CompletedTask;
+            };
         }
 
         private async void btnConnect_Click(object sender, EventArgs e)
@@ -63,7 +78,7 @@ namespace PoC_MQTT_Messaging_App
         {
             // build message
             var message = new MqttApplicationMessageBuilder()
-                .WithTopic(txtTopic.Text)
+                .WithTopic(txtPublishTopic.Text)
                 .WithPayload(txtPublishMessage.Text)
                 .Build();
 
@@ -76,6 +91,20 @@ namespace PoC_MQTT_Messaging_App
             // clear message box
             txtPublishMessage.Text = "";
 
+        }
+
+        private async void btnSubscribe_Click(object sender, EventArgs e)
+        {
+            // build subscribe options
+            var mqttSubscribeOptions = new MqttClientSubscribeOptionsBuilder()
+                .WithTopicFilter(txtSubscribeTopic.Text)
+                .Build();
+
+            await mqttClient.SubscribeAsync(mqttSubscribeOptions, CancellationToken.None);
+
+            // update status
+            lblStatus.Text = "subscribed to topic";
+            lblStatus.ForeColor = Color.Blue;
         }
     }
 }

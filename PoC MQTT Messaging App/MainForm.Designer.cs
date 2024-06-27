@@ -33,10 +33,15 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblTopic = new System.Windows.Forms.Label();
-            this.txtTopic = new System.Windows.Forms.TextBox();
+            this.txtPublishTopic = new System.Windows.Forms.TextBox();
             this.lblMessage = new System.Windows.Forms.Label();
             this.txtPublishMessage = new System.Windows.Forms.TextBox();
             this.btnPublish = new System.Windows.Forms.Button();
+            this.lblSubscribeTopic = new System.Windows.Forms.Label();
+            this.txtSubscribeTopic = new System.Windows.Forms.TextBox();
+            this.lblReceivedMessages = new System.Windows.Forms.Label();
+            this.lstSubscribeMessages = new System.Windows.Forms.ListBox();
+            this.btnSubscribe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblServerAddress
@@ -67,7 +72,7 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Location = new System.Drawing.Point(628, 9);
+            this.lblStatus.Location = new System.Drawing.Point(498, 9);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(160, 13);
             this.lblStatus.TabIndex = 3;
@@ -83,12 +88,12 @@
             this.lblTopic.TabIndex = 4;
             this.lblTopic.Text = "Topic";
             // 
-            // txtTopic
+            // txtPublishTopic
             // 
-            this.txtTopic.Location = new System.Drawing.Point(89, 78);
-            this.txtTopic.Name = "txtTopic";
-            this.txtTopic.Size = new System.Drawing.Size(160, 20);
-            this.txtTopic.TabIndex = 5;
+            this.txtPublishTopic.Location = new System.Drawing.Point(89, 78);
+            this.txtPublishTopic.Name = "txtPublishTopic";
+            this.txtPublishTopic.Size = new System.Drawing.Size(160, 20);
+            this.txtPublishTopic.TabIndex = 5;
             // 
             // lblMessage
             // 
@@ -117,15 +122,63 @@
             this.btnPublish.UseVisualStyleBackColor = true;
             this.btnPublish.Click += new System.EventHandler(this.btnPublish_Click);
             // 
+            // lblSubscribeTopic
+            // 
+            this.lblSubscribeTopic.AutoSize = true;
+            this.lblSubscribeTopic.Location = new System.Drawing.Point(377, 78);
+            this.lblSubscribeTopic.Name = "lblSubscribeTopic";
+            this.lblSubscribeTopic.Size = new System.Drawing.Size(34, 13);
+            this.lblSubscribeTopic.TabIndex = 9;
+            this.lblSubscribeTopic.Text = "Topic";
+            // 
+            // txtSubscribeTopic
+            // 
+            this.txtSubscribeTopic.Location = new System.Drawing.Point(417, 78);
+            this.txtSubscribeTopic.Name = "txtSubscribeTopic";
+            this.txtSubscribeTopic.Size = new System.Drawing.Size(160, 20);
+            this.txtSubscribeTopic.TabIndex = 10;
+            // 
+            // lblReceivedMessages
+            // 
+            this.lblReceivedMessages.AutoSize = true;
+            this.lblReceivedMessages.Location = new System.Drawing.Point(361, 104);
+            this.lblReceivedMessages.Name = "lblReceivedMessages";
+            this.lblReceivedMessages.Size = new System.Drawing.Size(55, 13);
+            this.lblReceivedMessages.TabIndex = 11;
+            this.lblReceivedMessages.Text = "Messages";
+            // 
+            // lstSubscribeMessages
+            // 
+            this.lstSubscribeMessages.FormattingEnabled = true;
+            this.lstSubscribeMessages.Location = new System.Drawing.Point(417, 104);
+            this.lstSubscribeMessages.Name = "lstSubscribeMessages";
+            this.lstSubscribeMessages.Size = new System.Drawing.Size(160, 95);
+            this.lstSubscribeMessages.TabIndex = 12;
+            // 
+            // btnSubscribe
+            // 
+            this.btnSubscribe.Location = new System.Drawing.Point(583, 78);
+            this.btnSubscribe.Name = "btnSubscribe";
+            this.btnSubscribe.Size = new System.Drawing.Size(75, 23);
+            this.btnSubscribe.TabIndex = 13;
+            this.btnSubscribe.Text = "Subscribe";
+            this.btnSubscribe.UseVisualStyleBackColor = true;
+            this.btnSubscribe.Click += new System.EventHandler(this.btnSubscribe_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(670, 338);
+            this.Controls.Add(this.btnSubscribe);
+            this.Controls.Add(this.lstSubscribeMessages);
+            this.Controls.Add(this.lblReceivedMessages);
+            this.Controls.Add(this.txtSubscribeTopic);
+            this.Controls.Add(this.lblSubscribeTopic);
             this.Controls.Add(this.btnPublish);
             this.Controls.Add(this.txtPublishMessage);
             this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.txtTopic);
+            this.Controls.Add(this.txtPublishTopic);
             this.Controls.Add(this.lblTopic);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnConnect);
@@ -145,10 +198,15 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblTopic;
-        private System.Windows.Forms.TextBox txtTopic;
+        private System.Windows.Forms.TextBox txtPublishTopic;
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.TextBox txtPublishMessage;
         private System.Windows.Forms.Button btnPublish;
+        private System.Windows.Forms.Label lblSubscribeTopic;
+        private System.Windows.Forms.TextBox txtSubscribeTopic;
+        private System.Windows.Forms.Label lblReceivedMessages;
+        private System.Windows.Forms.ListBox lstSubscribeMessages;
+        private System.Windows.Forms.Button btnSubscribe;
     }
 }
 
